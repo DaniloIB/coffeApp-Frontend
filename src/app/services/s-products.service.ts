@@ -8,7 +8,8 @@ import { Product } from '../models/product';
 })
 export class SProductsService {
 
-  productsURL = "http://localhost:8080/productos"
+  // productsURL = "http://localhost:8080/productos"
+  productsURL = "https://coffeeapp-bkd-daniloib.koyeb.app/productos";
 
   constructor(private http:HttpClient) {  }
 

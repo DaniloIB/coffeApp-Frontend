@@ -8,7 +8,8 @@ import { Category } from '../models/category';
 })
 export class SCategoryService {
 
-  categoryURL = "http://localhost:8080/categorias/"
+  // categoryURL = "http://localhost:8080/categorias/"
+  categoryURL = "https://coffeeapp-bkd-daniloib.koyeb.app/categorias/";
 
   constructor( private http:HttpClient ) { }
 
