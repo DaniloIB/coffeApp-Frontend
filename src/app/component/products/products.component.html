@@ -1,0 +1,20 @@
+<div class="w-full flex justify-evenly items-center flex-wrap gap-3">
+    <app-cards (click)="openDescription(productItem)" class="cursor-pointer" [product]="productItem"
+        *ngFor="let productItem of productosBbdd"></app-cards>
+</div>
+
+<div [class.active]="descriptionActive"
+    class="h-full z-10 fixed top-0 bottom-0 left-0 right-0 bg-white translate-x-full transition duration-1000 ease-in-out ">
+
+    <!-- Modularizar como componente. Para utilizar y cerrar -->
+    <div class="h-20 w-full px-6 flex items-center justify-end absolute sm:w-11/12">
+        <a class="bg-[#F5F5F5] p-1 rounded-full" (click)="closeDescription()">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="w-5 h-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+            </svg>
+        </a>
+    </div>
+    <!-- Enviar parametros al componente, para que renderice el elemento que estamos utilizando. Padre/hijo -->
+    <app-description [selectedProduct]="productSelected" (addedProduct)="addToShoppingCart($event)"></app-description>
+</div>

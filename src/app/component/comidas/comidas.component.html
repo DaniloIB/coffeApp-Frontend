@@ -1,0 +1,33 @@
+<div class="h-20 w-full px-6 flex items-center justify-end absolute">
+    <a class="bg-[#F5F5F5] p-2 rounded-full" routerLink="/home">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+            class="w-5 h-5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+        </svg>
+    </a>
+</div>
+
+<div class="h-20 w-full px-6 flex items-center justify-center">
+    <p class="font-bold text-xl justify-center">Comidas</p>
+</div>
+
+
+<!-- Buttons para elegir -->
+
+<div class="p-2 my-1 mx-auto flex justify-center items-center flex-wrap">
+    <button class="px-5 py-2 rounded-full font-semibold  hover:bg-primary  hover:text-white"
+        (click)="activedDulce()">Dulce</button>
+    <button class="px-5 py-2 rounded-full font-semibold  hover:bg-primary  hover:text-white "
+        (click)="activedSalado()">Salado</button>
+    <button class="px-5 py-2 rounded-full font-semibold  hover:bg-primary  hover:text-white "
+        (click)="activedAll()">Todo</button>
+</div>
+
+<!-- Cards Coffee -->
+<div class="w-full flex justify-evenly items-center flex-wrap gap-3">
+    <div [ngSwitch]="valueSelected">
+        <app-products *ngSwitchCase="0" [productosBbdd]="comidas"></app-products>
+        <app-products *ngSwitchCase="1" [productosBbdd]="comidasFiltradas"></app-products>
+        <app-products *ngSwitchCase="2" [productosBbdd]="comidasFiltradas"></app-products>
+    </div>
+</div>
